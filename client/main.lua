@@ -41,7 +41,6 @@ AddEventHandler('onResourceStop', function(resource)
 	end
 end)
 
-
 Citizen.CreateThread(function()
 	local location = Config.MineLoc
 	local location2 = Config.SellLoc
