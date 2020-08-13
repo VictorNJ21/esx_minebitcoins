@@ -19,7 +19,7 @@ Config.SellReward           = 500   -- How much 1 individual bitcoin sells for. 
 
 Config.HackTime             = 60    -- How Much time you have to hack.
 Config.NeedRaspberry        = true  -- If set to true, you'll need a raspberry to be able to hack.
-Config.RemoveRaspberry      = false -- Remove raspberry from inventory when hack is done?
+Config.RemoveRaspberry      = false -- Remove raspberry from inventory when hack is started?
 
 Config.NotifyCopsIfFailHack = true  -- Shall cops be notified if someone fails the hack?
 Config.NotfityCopsWhenSell  = true  -- Shall cops be notified if someone sells bitcoins?
