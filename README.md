@@ -1,6 +1,6 @@
 # esx_minebitcoins
 
-esx_minebitcoins is a script I just wrote, first plan was to keep it private, but I wanted to give the community something.
+esx_minebitcoins is a pretty simple script I just wrote, first plan was to keep it private, but I wanted to give the community something.
 This script allows players to mine bitcoins and sell them, with a lot of customizability in ```config.lua```.
 
 I kindly ask you to report any bug/suggestion down below.
