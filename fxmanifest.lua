@@ -26,6 +26,3 @@ dependencies {
     'progressBars',
     'esx_addons_gcphone'
 }
-
-
-
