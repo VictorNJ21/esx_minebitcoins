@@ -9,7 +9,7 @@ Config.Locale               = 'en'  -- Language
 
 Config.EnableBlips          = true  -- If set to true, both mine and sell locations are on the map
 
-Config.DrawDistance         = 4     -- How far away can you see the blips?
+Config.DrawDistance         = 4     -- How far away can you see the markers?
 
 Config.MineDuration         = 2000  -- Recieve 1 bitcoin every 2 secs, 2000ms = 2 secs.
 Config.SellDuration         = 5000  -- Put out for sale duration, default is 20 secs. 20000 = 20 secs.
