@@ -23,6 +23,6 @@ Config.RemoveRaspberry      = false -- Remove raspberry from inventory when hack
 
 Config.NotifyCopsIfFailHack = true  -- Shall cops be notified if someone fails the hack?
 Config.NotfityCopsWhenSell  = true  -- Shall cops be notified if someone sells bitcoins?
-Config.UseGcphone           = false -- Use Gcphone or esx notification? Requires one of above to be set to true.
+Config.UseGcphone           = false -- Use Gcphone to notify cops? False = esx notify. Requires one of above to be set to true.
 
 
