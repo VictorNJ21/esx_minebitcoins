@@ -30,8 +30,8 @@ end)
 
 RegisterNetEvent('esx_minebitcoins:HasRaspberry')
 AddEventHandler('esx_minebitcoins:HasRaspberry', function(source)
-	TriggerEvent("mhacking:show")
-	TriggerEvent("mhacking:start", 7, Config.HackTime, mycb)
+	TriggerEvent('mhacking:show')
+	TriggerEvent('mhacking:start', 7, Config.HackTime, mycb)
 end)
 
 AddEventHandler('onResourceStop', function(resource)
