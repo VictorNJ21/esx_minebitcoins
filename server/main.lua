@@ -1,6 +1,14 @@
+--------------
+-- ESX core -- 
+--------------
+
 ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+---------------------------
+-- Inventory check event --
+---------------------------
 
 RegisterNetEvent('esx_minebitcoins:CheckIfHasRaspberry')
 AddEventHandler('esx_minebitcoins:CheckIfHasRaspberry', function(xPlayer)
@@ -16,6 +24,10 @@ AddEventHandler('esx_minebitcoins:CheckIfHasRaspberry', function(xPlayer)
     end
 end)
 
+-------------------------
+-- Mine bitcoins event --
+-------------------------
+
 RegisterNetEvent('esx_minebitcoins:RecieveBitcoins')
 AddEventHandler('esx_minebitcoins:RecieveBitcoins', function(xPlayer)
     local _source = source
@@ -26,6 +38,10 @@ AddEventHandler('esx_minebitcoins:RecieveBitcoins', function(xPlayer)
         xPlayer.showNotification(_U('no_space'))
     end
 end)
+
+------------------------
+-- Bitcoin sale event --
+------------------------
 
 RegisterNetEvent('esx_minebitcoins:SellBitcoins')
 AddEventHandler('esx_minebitcoins:SellBitcoins', function(xPlayer)
