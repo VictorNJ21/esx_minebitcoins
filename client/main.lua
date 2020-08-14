@@ -1,3 +1,7 @@
+--------------
+-- ESX core --
+--------------
+
 ESX              		  			 			 = nil
 local PlayerData 		  			 			 = {}
 local IsNearMine, IsNearSell, IsMining IsSelling = false, false, false, false
@@ -12,6 +16,10 @@ Citizen.CreateThread(function()
 	end
 	PlayerData = ESX.GetPlayerData()
 end)
+
+------------
+-- Events --
+------------
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -40,6 +48,10 @@ AddEventHandler('onResourceStop', function(resource)
 		TriggerEvent('mhacking:hide')
 	end
 end)
+
+-----------------
+-- Main thread --
+-----------------
 
 Citizen.CreateThread(function()
 	local location = Config.MineLoc
@@ -78,6 +90,10 @@ Citizen.CreateThread(function()
 	end
 end)
 
+-------------------
+-- Draw distance --
+-------------------
+
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
@@ -95,7 +111,10 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- Create Blips
+-----------
+-- Blips --
+-----------
+
 Citizen.CreateThread(function()
 	if Config.EnableBlips then
 		local blip = AddBlipForCoord(Config.MineLoc)
@@ -116,28 +135,45 @@ Citizen.CreateThread(function()
 	end
 end)
 
+---------------
+-- Functions --
+---------------
+
 function mycb(success, timeremaining)
 	if success then
 		TriggerEvent('mhacking:hide')
 		MineBitcoins()
 	else
 		TriggerEvent('mhacking:hide')
-		if Config.NotifyCopsIfFailHack and (PlayerData.job ~= nil and PlayerData.job.name == 'police') then
+		FailedHack()
+	end
+end
+
+function MineBitcoins()
+	if Config.UseMythicNotify then
+		exports['mythic_notify']:SendAlert('success', _U('mythic_hack_succ'))
+	end
+	FreezeEntityPosition(PlayerPedId(), true)
+	IsMining = true
+	while IsMining do
+		Citizen.Wait(Config.MineDuration)
+		TriggerServerEvent('esx_minebitcoins:RecieveBitcoins', xPlayer)
+	end
+end
+
+function FailedHack()
+	if Config.UseMythicNotify then
+		exports['mythic_notify']:SendAlert('error', _U('mythic_hack_fail'))
+	end
+	if Config.NotifyCopsIfFailHack then
+		ESX.ShowNotification(_U('failed_hack'))
+		if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
 			if Config.UseGcphone then
 				PoliceAlert()
 			else
 				ESX.ShowAdvancedNotification(_U('notify_title'), _U('notify_subject'), _U('notify_msg_mine'), 'CHAR_CALL911', 2)
 			end
 		end
-	end
-end
-
-function MineBitcoins()
-	FreezeEntityPosition(PlayerPedId(), true)
-	IsMining = true
-	while IsMining do
-		Citizen.Wait(Config.MineDuration)
-		TriggerServerEvent('esx_minebitcoins:RecieveBitcoins', xPlayer)
 	end
 end
 
