@@ -23,6 +23,7 @@ server_scripts {
 dependencies {
     'es_extended',
     'mhacking',
+    'mythic_notify',
     'progressBars',
     'esx_addons_gcphone'
 }
