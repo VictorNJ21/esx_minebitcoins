@@ -6,7 +6,7 @@ This script allows players to mine bitcoins and sell them, with a lot of customi
 I kindly ask you to report any bug/suggestion down below.
 
 ## Demonstration
-https://streamable.com/pjk0i2
+https://streamable.com/t2n4b6
 
 ## Download & Installation
 
