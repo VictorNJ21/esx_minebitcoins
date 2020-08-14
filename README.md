@@ -14,6 +14,7 @@ https://streamable.com/pjk0i2
 - [es_extended](https://github.com/esx-framework/es_extended)
 - [mhacking](https://github.com/GHMatti/FiveM-Scripts)
 - [progressBars](https://github.com/EthanPeacock/progressBars)
+- [mythic_notify](https://github.com/FlawwsX/mythic_notify)
 - [gcphone](https://github.com/N3MTV/gcphone)
 
 ### Manually
