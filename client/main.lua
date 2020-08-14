@@ -54,8 +54,8 @@ Citizen.CreateThread(function()
 					if Config.NeedRaspberry then
 						TriggerServerEvent('esx_minebitcoins:CheckIfHasRaspberry', xPlayer)
 					else
-						TriggerEvent("mhacking:show")
-						TriggerEvent("mhacking:start", 7, Config.HackTime, mycb)
+						TriggerEvent('mhacking:show')
+						TriggerEvent('mhacking:start', 7, Config.HackTime, mycb)
 					end
 				end
 			else
