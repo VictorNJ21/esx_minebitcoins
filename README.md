@@ -27,4 +27,3 @@ https://streamable.com/t2n4b6
 ```
 start esx_minebitcoins
 ```
-
